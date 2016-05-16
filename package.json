@@ -1,0 +1,11 @@
+{
+  "name": "danielkalen-sass-fns",
+  "version": "1.0.1",
+  "description": "",
+  "main": "sass-fns.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "danielkalen",
+  "license": "ISC"
+}
