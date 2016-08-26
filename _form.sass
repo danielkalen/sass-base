@@ -21,6 +21,7 @@ $deleteIcon: '7'
 	&.disabled
 		cursor: not-allowed
 	&.error
+		$animationName: ''
 		@if $smoothErrorAnimation
 			$animationName: shakeyTransform
 		@else
@@ -248,7 +249,7 @@ $deleteIcon: '7'
 		.error > &
 			border-color: $error-color
 
-		
+		$placeholderColor: ''		
 		@if $placeholder
 			$placeholderColor: fade-out($textColor, 0.55)
 		@else
@@ -308,6 +309,7 @@ $deleteIcon: '7'
 			@if $style == old
 				top: $iconMarginForOld
 
+	$placeholderColor: ''
 	@if $placeholder
 		$placeholderColor: fade-out($textColor, 0.5)
 	@else

@@ -311,16 +311,16 @@ $iconfamily: bwdcons
 	transition: $transition
 
 
-=transitionTransform($time:0.25s, $additional:false)
+=transitionTransform($time:0.25s, $additional:false, $easing:ease, $delay:0s)
 	// $transformTransition: transform $time, -ms-transform $time, -moz-transform $time, -webkit-transform $time
-	$transformTransition: transform $time, -webkit-transform $time
+	$transformTransition: transform $time $easing $delay, -webkit-transform $time $easing $delay
 	@if $additional
 		transition: $transformTransition, $additional
 	@else
 		transition: $transformTransition
 
 
-=tooltip($side: 'top', $margin: 33px)
+=tooltip($side:'top', $margin:33px, $color:#181818, $borderColor:"none", $textColor:white)
 	position: absolute
 	z-index: 10
 	@if $side == 'top'
@@ -338,19 +338,19 @@ $iconfamily: bwdcons
 	display: block
 	padding: 6px 8px 5px
 	border-radius: 2px
-	background-color: #181818
+	background-color: $color
 	font-family: avenir
 	font-weight: 700
 	line-height: 1
 	font-size: 10px
 	letter-spacing: .4px
 	text-transform: uppercase
-	color: white
-	+arrow($side: $side, $align: "center", $size: 5px, $color: #181818, $borderColor: "none", $borderSize: 3px)
+	color: $textColor
+	+arrow($side: $side, $align: "center", $size: 5px, $color: $color, $borderColor: $borderColor, $borderSize: 3px)
 	opacity: 0
 	visibility: hidden
 	transition: opacity 0.2s, visibility 0.2s
-
+	
 
 =tooltip-hover
 	visibility: visible
@@ -379,13 +379,13 @@ $iconfamily: bwdcons
 	vertical-align: top
 
 
-=toggle($size:50px, $color:$green)
+=toggle($size:50px, $color:$green, $background:rgb(230,230,230), $border:rgba(190, 190, 190, 0.4))
 	position: relative
 	z-index: 2
 	width: $size
 	height: $size/2
-	background-color: rgb(230,230,230)
-	border: 1px solid rgba(190, 190, 190, 0.4)
+	background-color: $background
+	border: 1px solid $border
 	border-radius: 50px
 	cursor: pointer
 
@@ -425,7 +425,7 @@ $iconfamily: bwdcons
 	&.enabled:before
 		opacity: 1
 		width: $size*0.7
-
+		
 
 =transform($transforms) 
 	-moz-transform: $transforms
