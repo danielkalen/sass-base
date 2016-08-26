@@ -519,6 +519,8 @@ $iconfamily: bwdcons
 
 
 =font-face($name, $font-file, $type, $base64: true, $eot: false, $weight: false, $style: false)
+	$prefix: ''
+	$b64type: ''
 	@if $type == 'woff'
 		$prefix: 'data:application/font-ttf;charset=utf-8;base64,'
 		$b64type: 'woff'
