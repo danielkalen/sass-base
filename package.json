@@ -1,10 +1,11 @@
 {
-  "name": "danielkalen-sass-fns",
-  "version": "1.0.1",
+  "name": "@danielkalen/sass-base",
+  "version": "1.0.0",
   "description": "",
   "main": "sass-fns.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  	"istanbul": "istanbul cover --dir test/coverage/node node_modules/mocha/bin/_mocha -- -u tdd -b",
+    "test": "mocha -u tdd -b"
   },
   "author": "danielkalen",
   "license": "ISC"
