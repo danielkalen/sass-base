@@ -1,10 +1,10 @@
 {
   "name": "@danielkalen/sass-base",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "compiler-fns.js",
   "scripts": {
-  	"istanbul": "istanbul cover --dir test/coverage/node node_modules/mocha/bin/_mocha -- -u tdd -b",
+    "istanbul": "istanbul cover --dir test/coverage/node node_modules/mocha/bin/_mocha -- -u tdd -b",
     "test": "mocha -u tdd -b"
   },
   "author": "danielkalen",
