@@ -1,6 +1,6 @@
 var fs = require('fs'),
 	path = require('path'),
-	sass = require('node-sass'),
+	sass = require('node-sass');
 
 module.exports = function(fontLocation){
 	fontLocation = fontLocation || process.env.fontsDir || '/public/fonts/';
