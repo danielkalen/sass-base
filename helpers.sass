@@ -615,3 +615,11 @@
 
 @function letter-spacing-px($target, $font-size)
 	@return #{($target*$font-size) / 1000}px
+
+@function tint($color, $percentage)
+	@return mix(white, $color, $percentage)
+
+@function shade($color, $percentage)
+	@return mix(black, $color, $percentage)
+
+
