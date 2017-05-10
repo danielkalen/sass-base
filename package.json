@@ -1,6 +1,6 @@
 {
   "name": "@danielkalen/sass-base",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "",
   "main": "compiler-fns.js",
   "scripts": {
