@@ -5,7 +5,7 @@ var fs = require('fs'),
 module.exports = {
 	'base64Font($file)': function(file) {
 		var fontLocation = process.env.fontsDir || '/public/fonts/',
-			filePath = path.join(process.cwd(), fontLocation, file.getValue()),
+			filePath = path.resolve(fontLocation, file.getValue()),
 			output, data;
 		
 		data = fs.readFileSync(filePath);
