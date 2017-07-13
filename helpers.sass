@@ -515,13 +515,10 @@
 
 
 // ==== Animations =================================================================================
-=keyframes($name, $ms:true, $moz:true, $webkit:true, $all:true)
+=keyframes($name, $moz:true, $webkit:true, $all:true)
 	@keyframes #{$name}
 		@content
 
-	@if $ms and $all
-		+keyframes-ms($name)
-			@content
 	@if $moz and $all
 		+keyframes-moz($name)
 			@content
@@ -529,9 +526,6 @@
 		+keyframes-webkit($name)
 			@content
 
-=keyframes-ms($name)
-	@-ms-keyframes #{$name}
-		@content
 
 =keyframes-moz($name)
 	@-moz-keyframes #{$name}
@@ -550,11 +544,6 @@
 		@each $stage, $transform in $map
 			#{$stage}
 				transform: $transform
-	
-	@-ms-keyframes #{$name}
-		@each $stage, $transform in $map
-			#{$stage}
-				-ms-transform: $transform
 	
 	@-moz-keyframes #{$name}
 		@each $stage, $transform in $map
