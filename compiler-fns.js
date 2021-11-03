@@ -1,6 +1,6 @@
 var fs = require('fs'),
 	path = require('path'),
-	sass = require('node-sass');
+	sass = require('sass');
 
 module.exports = {
 	'base64Font($file)': function(file) {
