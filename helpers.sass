@@ -47,7 +47,6 @@
 			width: 100%
 			height: 100%
 			padding: $padding
-			// background-color: rgba(0,0,0,0.2)
 	@else
 		content: ''
 		position: absolute
@@ -56,7 +55,6 @@
 		width: 100%
 		height: 100%
 		padding: $padding
-		// background-color: rgba(0,0,0,0.2)
 
 =make-untouchable
 	+user-select(none)
@@ -334,7 +332,7 @@
 	position: relative
 	z-index: 2
 	width: $size
-	height: $size/2
+	height: math.div($size, 2)
 	background-color: $background
 	border: 1px solid $border
 	border-radius: 50px
@@ -344,8 +342,8 @@
 		position: absolute
 		left: 0
 		right: 0
-		width: $size/2
-		height: $size/2
+		width: math.div($size, 2)
+		height: math.div($size, 2)
 		+center
 		background-color: white
 		border-radius: 50%
@@ -366,7 +364,7 @@
 		position: absolute
 		top: 0
 		left: 0
-		width: $size/2
+		width: math.div($size,2)
 		height: 100%
 		background-color: $color
 		border-radius: 50px 0 0 50px
@@ -561,7 +559,7 @@
 
 
 =spinnerLoader($size:30px, $speed:0.3s, $thickness:1.1, $bgFade:0.8, $color:$black, $position:relative, $transform:false)
-	$borderSize: ($size/10)*$thickness
+	$borderSize: (math.div($size,10))*$thickness
 	position: $position
 	width: $size
 	height: $size
@@ -593,19 +591,19 @@
 // ==== Functions =================================================================================
 
 @function perc($target, $parent)
-	@return $target / $parent * 100%
+	@return math.div($target, $parent) * 100%
 
 @function golden($target)
 	@return #{$target * 1.618}px
 
 @function golden-down($target)
-	@return #{$target / 1.618}px
+	@return #{math.div($target, 1.618)}px
 
 @function letter-spacing($target)
-	@return #{$target / 1000}em
+	@return #{math.div($target, 1000)}em
 
 @function letter-spacing-px($target, $font-size)
-	@return #{($target*$font-size) / 1000}px
+	@return #{math.div(($target*$font-size), 1000)}px
 
 @function tint($color, $percentage)
 	@return mix(white, $color, $percentage)
