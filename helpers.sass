@@ -475,7 +475,7 @@
 			+arrow_helper($size + $borderSize, $borderColor, $size - $borderSize, $side, $align)
 
 
-=font-face($name, $font-file, $type, $base64: true, $eot: false, $weight: false, $style: false)
+=font-face($name, $font-file, $type, $base64: true, $eot: false, $weight: false, $style: false, $unicode-range: false)
 	$prefix: ''
 	$b64type: ''
 	@if $type == 'woff'
@@ -500,6 +500,8 @@
 			font-weight: $weight
 		@if $style
 			font-style: $style
+		@if $unicode-range
+			unicode-range: $unicode-range
 
 
 
