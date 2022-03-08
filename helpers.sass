@@ -481,10 +481,10 @@
 	@if $type == 'woff'
 		$prefix: 'data:application/font-woff;charset=utf-8;base64,'
 		$b64type: 'woff'
-	@elseif $type == 'ttf'
+	@else if $type == 'ttf'
 		$prefix: 'data:application/font-ttf;charset=utf-8;base64,'
 		$b64type: 'truetype'
-	@elseif $type == 'eot'
+	@else if $type == 'eot'
 		$prefix: 'data:font/opentype;charset=utf-8;base64,'
 		$b64type: 'embedded-opentype'
 	$iefont: unquote("#{$eot}?#iefix")
